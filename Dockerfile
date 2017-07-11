@@ -2,7 +2,7 @@ FROM buildpack-deps:jessie-curl
 RUN apt-get update && apt-get install build-essential git -y
 RUN wget https://storage.googleapis.com/golang/go1.8.linux-amd64.tar.gz
 RUN tar -C /usr/local -xzf go1.8.linux-amd64.tar.gz
-RUN mkdir /go
+RUN mkdir -p /go/{src,bin,pkg}
 RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
 RUN apt-get install -y nodejs
 RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
