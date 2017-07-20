@@ -1,5 +1,5 @@
 FROM buildpack-deps:jessie-curl
-RUN apt-get update && apt-get install build-essential git -y
+RUN apt-get update && apt-get install build-essential git zip -y
 RUN wget https://storage.googleapis.com/golang/go1.8.linux-amd64.tar.gz
 RUN tar -C /usr/local -xzf go1.8.linux-amd64.tar.gz
 RUN mkdir -p /go/{src,bin,pkg}
