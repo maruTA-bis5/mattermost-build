@@ -11,7 +11,3 @@ RUN apt-get update && apt-get install yarn -y
 
 ENV GOPATH=/go
 ENV PATH=$PATH:/usr/local/go/bin:/go/bin
-
-# Needs Docker Client
-RUN apt-get update && apt-get install -y apt-transport-https ca-certificates curl lxc iptables
-RUN curl -sSL https://get.docker.com/ | sh
