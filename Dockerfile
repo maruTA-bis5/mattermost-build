@@ -1,5 +1,5 @@
-FROM buildpack-deps:jessie-curl
-RUN apt-get update && apt-get install build-essential git zip libpng12-0 -y
+FROM buildpack-deps:xenial-curl
+RUN apt update && apt install build-essential git zip libpng12-0 -y
 RUN wget https://storage.googleapis.com/golang/go1.9.linux-amd64.tar.gz && tar -C /usr/local -xzf go1.9.linux-amd64.tar.gz
 RUN mkdir -p /go/src && mkdir -p /go/bin && mkdir -p /go/pkg
 RUN curl -sL https://deb.nodesource.com/setup_8.x | bash - && apt-get install -y nodejs
