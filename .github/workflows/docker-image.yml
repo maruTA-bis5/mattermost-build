@@ -16,8 +16,9 @@ jobs:
         registry: ghcr.io
         username: ${{ github.actor }}
         password: ${{ secrets.GITHUB_TOKEN }}
-    - name: Set up tag name
+    - name: Set up variables
       run: |
+        echo "repository_name=$(echo ${{ github.repository }} | tr '[A-Z]' '[a-z]')" >> $GITHUB_ENV
         echo "tag_name=$(echo ${{ github.ref }} | sed -e 's#refs/tags/##g' | sed -e 's#refs/heads/##g')" >> $GITHUB_ENV
     - name: Build and push
       id: docker_build
@@ -25,4 +26,4 @@ jobs:
       with:
         push: true
         tags: |
-          ghcr.io/${{ github.repository }}:${{ env.tag_name }}
+          ghcr.io/${{ env.repository_name }}:${{ env.tag_name }}
