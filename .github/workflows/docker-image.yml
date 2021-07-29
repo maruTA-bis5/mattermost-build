@@ -14,4 +14,4 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag mattermost-build:${{ github.ref }}
+      run: docker build . --file Dockerfile --tag mattermost-build:$(echo ${{ github.ref }} | sed -e "s#refs/tags/##g" | sed -e "s#refs/heads/##g")
