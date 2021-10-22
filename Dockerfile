@@ -1,4 +1,4 @@
-FROM buildpack-deps:xenial-curl
+FROM buildpack-deps:focal-curl
 RUN apt update && apt install build-essential git zip libpng16-dev autoconf libtool pkg-config nasm jq -y
 RUN wget https://dl.google.com/go/go1.16.7.linux-amd64.tar.gz && tar -C /usr/local -xzf go1.16.7.linux-amd64.tar.gz
 RUN mkdir -p /go/src && mkdir -p /go/bin && mkdir -p /go/pkg
