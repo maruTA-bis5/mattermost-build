@@ -1,6 +1,6 @@
 FROM buildpack-deps:focal-curl
 
-RUN apt-get update && apt-get install build-essential git zip
+RUN apt-get update && apt-get install build-essential git zip -y
 RUN wget https://dl.google.com/go/go1.19.13.linux-amd64.tar.gz && tar -C /usr/local -xzf go1.19.13.linux-amd64.tar.gz
 RUN mkdir -p /go/src && mkdir -p /go/bin && mkdir -p /go/pkg
 
