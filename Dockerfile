@@ -6,7 +6,7 @@ RUN mkdir -p /go/src && mkdir -p /go/bin && mkdir -p /go/pkg
 
 ENV NODE_MAJOR=18
 RUN curl -fsSL https://deb.nodesource.com/setup_${NODE_MAJOR}.x | bash -
-RUN apt-get install nodejs=18.10.0-1nodesource1 build-essential git zip libpng-dev autoconf libtool pkg-config nasm jq -y \
+RUN apt-get install nodejs=18.14.2-1nodesource1 build-essential git zip libpng-dev autoconf libtool pkg-config nasm jq -y \
 && apt-get clean \
 && rm -rf /var/lib/apt/lists/*
 
