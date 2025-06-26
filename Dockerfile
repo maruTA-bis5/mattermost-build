@@ -1,7 +1,7 @@
 FROM buildpack-deps:focal-curl
 
 RUN apt-get update && apt-get install gnupg -y
-RUN wget https://dl.google.com/go/go1.21.8.linux-amd64.tar.gz && tar -C /usr/local -xzf go1.21.8.linux-amd64.tar.gz
+RUN wget https://dl.google.com/go/go1.22.6.linux-amd64.tar.gz && tar -C /usr/local -xzf go1.22.6.linux-amd64.tar.gz
 RUN mkdir -p /go/src && mkdir -p /go/bin && mkdir -p /go/pkg
 
 ENV NODE_MAJOR=18
